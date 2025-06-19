@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+.NavOptions{
+    display: flex;
+    gap: 1em;
+}
+/* .NavOption{
+    width: 100%;
+} */
+.NavOption{
+    position: relative;
+}
+.NavOption:hover::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0; 
+    width: 110%;
+    height: 100%;         /* 100% of the anchor */
+    border-bottom: 3px solid orange;
+    border-radius: 2px;
+    padding: 3px;
+}
