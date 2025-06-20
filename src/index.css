@@ -2,7 +2,7 @@
 
 .NavOptions{
     display: flex;
-    gap: 1em;
+    gap: 1rem;
 }
 /* .NavOption{
     width: 100%;
@@ -15,7 +15,7 @@
     position: absolute;
     bottom: -4px;
     left: 0; 
-    width: 110%;
+    width: 100%;
     height: 100%;         /* 100% of the anchor */
     border-bottom: 3px solid orange;
     border-radius: 2px;
