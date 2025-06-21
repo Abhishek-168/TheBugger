@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 
+
 function Login()
 {
     const [formData, setFormData] = useState({
@@ -34,6 +35,7 @@ function Login()
 
             const data = await resp.json();
             if (data.success) {
+            localStorage.setItem('authToken', data.token);
             console.log("Login Successful", data);
             } else {
             console.log("Login failed", data);
