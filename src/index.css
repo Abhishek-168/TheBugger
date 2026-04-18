@@ -38,3 +38,69 @@
     color: white;
     /* background-color: brown; */
 }
+/* //////////////////////////////////////////////////////////////////// */
+
+.spandiv{
+    /* visibility: visible; */
+    position: relative;
+    width: 15vw;
+    height: 15vw;
+    background-color: #fb0779;
+    border-radius: 50%;
+    left: 6vw;
+    top: -18vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    /* z-index: 1; */
+}
+.problem-wheel{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.problem{
+    position: absolute;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    transform-origin: bottom right;
+    transform: rotate(calc(45deg * var(--i)));
+    clip-path: polygon(0 0, 58% 0, 100% 100%, 0 58%);   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    color: #000;
+    text-align: center;
+}
+.spin-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid rgb(0, 0, 0);
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(246, 244, 244, 0.2);
+}
+.problem-wheel span{
+    position: relative;
+    transform: rotate(218deg);
+    padding-bottom: 1.8em;
+    left: 0.5em;
+    font-size: 0.4em;
+    font-family: "Avenir";
+    font-weight: 500;
+}

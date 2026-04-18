@@ -43,6 +43,7 @@ function authenticateToken(req, res, next) {
         if (err) {
             return res.sendStatus(403);  // Invalid token
         }
+       
         req.username = user.username;
         next();
     });
@@ -82,16 +83,17 @@ app.post('/login', (req, res) => {
         if (!userExists) {
             return res.status(401).json({error: 'User not found or incorrect password'});
         }
+      
         const token = jwt.sign({username}, SECRET);
         return res.status(200).json({success: true, message: 'Login successful', token: token});
     }
 });
 
-app.get("/solve", authenticateToken, (req, res) => {
+app.get("/solve", authenticateToken, async (req, res) => {
     try {
         const username = req.username;
 
-        const user = User.findOne({ username }).select('-password');
+        const user =  await User.findOne({ username }).select('-password');
         if (!user) {
         return res.status(404).json({ message: 'User not found' });
         }
